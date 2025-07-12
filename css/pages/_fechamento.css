@@ -1,0 +1,350 @@
+/*
+ * ==========================================================================
+ * EASY RAKE - FECHAMENTO DE CAIXA STYLESHEET
+ * ==========================================================================
+ * Autor: Lucas
+ * Descrição: Estilização específica para a página de fechamento de caixa,
+ * focada em uma experiência visual moderna e funcional.
+ * ==========================================================================
+ */
+
+/* --- ESTILOS ESPECÍFICOS PARA FECHAMENTO --- */
+
+/* Resumo Financeiro */
+.resumo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.resumo-card {
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-align: center;
+    transition: all var(--transition-speed) ease;
+}
+
+.resumo-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px -10px var(--accent-color-glow);
+}
+
+.resumo-label {
+    color: var(--secondary-text-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.resumo-valor {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-text-color);
+    margin: 0;
+}
+
+.resumo-valor.entrada {
+    color: var(--success-color);
+}
+
+.resumo-valor.saida {
+    color: var(--error-color);
+}
+
+.resumo-valor.saldo {
+    color: var(--accent-color);
+}
+
+/* Ações de Fechamento */
+.acoes-fechamento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.acao-card {
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    transition: all var(--transition-speed) ease;
+}
+
+.acao-card:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 8px 25px -10px var(--accent-color-glow);
+}
+
+.acao-card h4 {
+    color: var(--primary-text-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+}
+
+.acao-card p {
+    color: var(--secondary-text-color);
+    font-size: 0.9rem;
+    margin: 0 0 1rem 0;
+    line-height: 1.4;
+}
+
+.botoes-exportacao {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.botoes-exportacao .button {
+    flex: 1;
+    min-width: 80px;
+}
+
+/* Status do Caixa */
+.status-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.status-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    transition: all var(--transition-speed) ease;
+}
+
+.status-item:hover {
+    border-color: var(--accent-color);
+    background: var(--surface-color);
+}
+
+.status-label {
+    color: var(--secondary-text-color);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.status-item span:last-child {
+    color: var(--primary-text-color);
+    font-weight: 600;
+}
+
+/* Compilação de Dados */
+.compilacao-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.compilacao-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.compilacao-totais {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.compilacao-totais strong {
+    color: var(--primary-text-color);
+    font-weight: 600;
+}
+
+/* Feedback de Exportação */
+.export-feedback {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem 1.5rem;
+    border-radius: var(--border-radius);
+    color: white;
+    font-weight: 600;
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform var(--transition-speed) ease;
+}
+
+.export-feedback.show {
+    transform: translateX(0);
+}
+
+.export-feedback.success {
+    background: var(--success-color);
+    box-shadow: 0 4px 15px var(--success-color-glow);
+}
+
+.export-feedback.error {
+    background: var(--error-color);
+    box-shadow: 0 4px 15px var(--error-color-glow);
+}
+
+/* --- DASHBOARD SESSÃO ATIVA (BLOCOS DETALHADOS) --- */
+.dashboard-sessao-ativa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.dashboard-bloco {
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    transition: all var(--transition-speed) ease;
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+.dashboard-bloco h4 {
+    color: var(--primary-text-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.dashboard-bloco.destaque {
+    border: 2px solid var(--accent-color);
+    background: var(--surface-color);
+    box-shadow: 0 4px 20px -8px var(--accent-color-glow);
+}
+
+.dashboard-bloco .correto {
+    color: var(--success-color);
+    font-weight: 700;
+}
+.dashboard-bloco .falta {
+    color: var(--error-color);
+    font-weight: 700;
+}
+.dashboard-bloco .sobra {
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+.caixinhas-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+}
+.caixinhas-lista li {
+    padding: 0.3rem 0;
+    border-bottom: 1px dashed var(--border-color);
+    font-size: 0.97rem;
+}
+.caixinhas-lista li:last-child {
+    border-bottom: none;
+}
+
+.jogadores-lista-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.7rem;
+    font-size: 0.97rem;
+}
+.jogadores-lista-table th, .jogadores-lista-table td {
+    border: 1px solid var(--border-color);
+    padding: 0.4rem 0.6rem;
+    text-align: left;
+}
+.jogadores-lista-table th {
+    background: var(--surface-color);
+    color: var(--primary-text-color);
+    font-weight: 600;
+}
+.jogadores-lista-table td {
+    color: var(--primary-text-color);
+}
+
+#btn-expandir-jogadores {
+    margin: 0.5rem 0 0.5rem 0;
+    padding: 0.3rem 1.2rem;
+    font-size: 0.95rem;
+    border-radius: var(--border-radius);
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background var(--transition-speed) ease;
+}
+#btn-expandir-jogadores:hover {
+    background: var(--accent-color-glow);
+}
+
+/* Responsividade para fechamento */
+@media (max-width: 768px) {
+    .resumo-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .acoes-fechamento-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .status-info {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .status-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .compilacao-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .compilacao-actions {
+        justify-content: center;
+    }
+    
+    .botoes-exportacao {
+        flex-direction: column;
+    }
+    
+    .export-feedback {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+        transform: translateY(-100%);
+    }
+    
+    .export-feedback.show {
+        transform: translateY(0);
+    }
+} 
+
+/* Responsividade dos blocos do dashboard */
+@media (max-width: 900px) {
+    .dashboard-sessao-ativa {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+} 

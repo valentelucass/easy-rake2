@@ -1,0 +1,67 @@
+/*
+  .app-layout: Define o layout principal da aplicação, usando flexbox para organizar os elementos filhos (ex: sidebar, conteúdo principal) lado a lado. Garante altura mínima de 100vh (tela cheia) e largura total.
+*/
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/*
+  .app-content: Área principal do conteúdo do app (dashboard). Aplica espaçamento interno (padding) para não ficar atrás do header fixo, define largura máxima e centraliza o conteúdo.
+*/
+.app-content {
+    padding: 100px 2rem 2rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/*
+  Responsividade: Em telas pequenas, reduz o padding superior para economizar espaço.
+*/
+@media (max-width: 600px) {
+  .app-content {
+    padding-top: 80px; /* reduz o padding em telas pequenas */
+  }
+}
+
+/*
+  .main-content: Container flexível para o conteúdo principal, organiza os elementos em coluna.
+*/
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+  .content-area: Área interna do conteúdo, com padding e ocupando o espaço disponível.
+*/
+.content-area {
+    padding: 2rem;
+    flex: 1;
+}
+
+/*
+  .tab-content: Esconde todas as abas de conteúdo por padrão.
+*/
+.tab-content {
+    display: none;
+}
+
+/*
+  .tab-content.active: Mostra apenas a aba de conteúdo ativa.
+*/
+.tab-content.active {
+    display: block;
+}
+
+.app-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}

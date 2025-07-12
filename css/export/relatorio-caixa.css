@@ -1,0 +1,68 @@
+body, html {
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 13px;
+    color: #222;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+}
+h2, h3 {
+    color: #e11d48;
+    font-weight: bold;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+h2 {
+    font-size: 1.5em;
+    border-bottom: 2px solid #e11d48;
+    padding-bottom: 0.2em;
+}
+h3 {
+    font-size: 1.15em;
+    margin-top: 1.2em;
+}
+strong {
+    color: #222;
+    font-weight: bold;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1.5em;
+    font-size: 13px;
+}
+thead tr {
+    background: #e11d48;
+    color: #fff;
+}
+thead th {
+    padding: 8px 6px;
+    border: 1px solid #bbb;
+    font-weight: bold;
+    font-size: 1em;
+}
+tbody td {
+    padding: 7px 6px;
+    border: 1px solid #bbb;
+}
+tbody tr:nth-child(even) {
+    background: #f8f8f8;
+}
+tbody tr:nth-child(odd) {
+    background: #fff;
+}
+.compilacao-totais, .totais {
+    margin-top: 1em;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #e11d48;
+}
+@media print {
+    body, html {
+        background: #fff !important;
+        color: #222 !important;
+    }
+    table {
+        page-break-inside: avoid;
+    }
+} 

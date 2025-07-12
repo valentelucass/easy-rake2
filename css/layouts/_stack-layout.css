@@ -1,0 +1,30 @@
+/* Grid de containers empilhados (stack layout) */
+.app-layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--cor-fundo, #18181c);
+}
+
+.app-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 90px 2rem 2rem 2rem; /* padding-top para o header fixo */
+}
+
+.content-stack {
+    width: 100%;
+    max-width: 900px; /* ou 1200px, conforme seu design */
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Espaço entre os cards */
+}
+
+.content-card {
+    background: var(--cor-container, #23232a);
+    border-radius: 12px;
+    box-shadow: var(--glow-card, 0 2px 16px 0 rgba(0,0,0,0.10));
+    padding: 2rem;
+    width: 100%;
+} 
