@@ -1,0 +1,438 @@
+/* ===================== RELATÓRIOS - GRID E CARDS ===================== */
+.reports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.report-card {
+    background: var(--surface-color, #181b23);
+    border-radius: 16px;
+    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.10);
+    border: 1.5px solid var(--border-color, #23272f);
+    padding: 1.7rem 1.4rem 1.3rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 180px;
+    transition: box-shadow 0.2s, border 0.2s;
+    position: relative;
+}
+.report-card:hover {
+    box-shadow: 0 6px 28px 0 rgba(225,29,72,0.13);
+    border: 2px solid var(--accent-color, #e11d48);
+}
+.report-card h3 {
+    margin: 0 0 0.7rem 0;
+    font-size: 1.18rem;
+    color: var(--primary-text-color, #fff);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+.report-card p {
+    color: var(--secondary-text-color, #bfc4cc);
+    font-size: 1.04rem;
+    margin-bottom: 1.3rem;
+    margin-top: 0;
+    line-height: 1.5;
+}
+.report-card .button {
+    margin-top: auto;
+    align-self: flex-end;
+    padding: 0.65rem 1.4rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    background: var(--accent-color, #e11d48) !important;
+    color: #fff !important;
+    border: none !important;
+    box-shadow: 0 1px 4px 0 rgba(225,29,72,0.10);
+    transition: background 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+.report-card .button:hover {
+    background: #a01432 !important;
+    box-shadow: 0 2px 12px 0 rgba(225,29,72,0.18);
+}
+
+@media (max-width: 900px) {
+    .reports-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+    .report-card {
+        min-height: 140px;
+        padding: 1.1rem 0.7rem 1rem 0.7rem;
+    }
+} 
+
+/* ===================== DASHBOARD CARDS - RELATÓRIOS ===================== */
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.dashboard-card {
+    background: var(--surface-color, #181b23);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color, #23272f);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.dashboard-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-color, #e11d48), #f81f4f);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--accent-color, #e11d48);
+}
+
+.dashboard-card:hover::before {
+    transform: scaleX(1);
+}
+
+.dashboard-card span {
+    color: var(--secondary-text-color, #bfc4cc);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dashboard-card strong {
+    color: var(--primary-text-color, #fff);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Cores específicas para cada tipo de card */
+.dashboard-card.saldo-atual strong {
+    color: #10b981;
+}
+
+.dashboard-card.entradas strong {
+    color: #3b82f6;
+}
+
+.dashboard-card.saidas strong {
+    color: #ef4444;
+}
+
+.dashboard-card.gastos strong {
+    color: #f59e0b;
+}
+
+.dashboard-card.transacoes strong {
+    color: #8b5cf6;
+}
+
+/* Responsividade para dashboard cards */
+@media (max-width: 768px) {
+    .dashboard-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .dashboard-card {
+        padding: 1rem;
+    }
+    
+    .dashboard-card span {
+        font-size: 0.8rem;
+    }
+    
+    .dashboard-card strong {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===================== CALENDÁRIO DE HISTÓRICO DE RELATÓRIOS ===================== */
+.calendar-container {
+    background: var(--surface-color, #181b23);
+    border-radius: 16px;
+    padding: 0.1rem 3.5rem 0.1rem 3.5rem;
+    margin-bottom: 2.2rem;
+    margin-top: 1.5rem;
+    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.10);
+    border: 1.5px solid var(--border-color, #23272f);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    width: 100%;
+    max-width: 1400px;
+    min-width: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.calendar-history {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    background: none;
+    color: var(--primary-text-color, #fff);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05rem;
+}
+
+/* HEADER DO CALENDÁRIO - TÍTULO E SETAS */
+.calendar-history .calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2.5rem 1.5rem 0.7rem 1.2rem;
+    margin-bottom: 0.5rem;
+    box-sizing: border-box;
+}
+.calendar-history .calendar-header span,
+.calendar-history .calendar-header h1,
+.calendar-history .calendar-header strong {
+    flex: 1;
+    text-align: center;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--primary-text-color, #fff);
+    text-shadow: 2px 3px 8px #e11d4833, 0 2px 8px #00000033;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+.calendar-history .calendar-nav-btn {
+    background: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    color: var(--accent-color, #e11d48) !important;
+    font-size: 2.6rem;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    transition: color 0.2s;
+    user-select: none;
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.8rem;
+    width: 2.8rem;
+}
+.calendar-history .calendar-nav-btn svg {
+    display: block;
+    margin: auto;
+    color: var(--accent-color, #e11d48);
+    stroke: var(--accent-color, #e11d48);
+    stroke-width: 3.5;
+    width: 2.2rem;
+    height: 2.2rem;
+    background: none !important;
+    fill: none !important;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+.calendar-history .calendar-nav-btn:hover {
+    color: #fff !important;
+    background: none !important;
+    box-shadow: none !important;
+}
+
+/* Calendário de Relatórios - Setas de Navegação (isolado) */
+.calendar-history .calendar-nav-btn,
+.calendar-history .calendar-nav-btn:focus,
+.calendar-history .calendar-nav-btn:active,
+.calendar-history .calendar-nav-btn:hover {
+    background: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.calendar-history .calendar-nav-btn svg {
+    background: none !important;
+    fill: none !important;
+}
+
+.calendar-history .calendar-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0.7rem 0.7rem; /* row-gap aumentado */
+    margin: 0 auto;
+    table-layout: fixed;
+}
+.calendar-history th {
+    color: var(--secondary-text-color, #bfc4cc);
+    font-size: 1.01rem;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 0.05rem;
+    letter-spacing: 0.5px;
+    background: none;
+}
+.calendar-history td {
+    text-align: center;
+    padding: 0.8rem 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    background: var(--surface-color, #181b23);
+    border: 1px solid var(--border-color, #23272f);
+    color: var(--primary-text-color, #fff);
+    font-weight: 500;
+    min-width: 40px;
+    height: 40px;
+    vertical-align: middle;
+}
+.calendar-history td:hover {
+    background: var(--accent-color, #e11d48);
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3);
+}
+.calendar-history td:focus {
+    outline: 2px solid var(--accent-color, #e11d48);
+    outline-offset: 2px;
+}
+.calendar-history td.selected {
+    background: var(--accent-color, #e11d48);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.4);
+    transform: scale(1.05);
+}
+.calendar-history td.has-report {
+    background: linear-gradient(135deg, var(--accent-color, #e11d48), #f81f4f);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(225, 29, 72, 0.3);
+    position: relative;
+}
+.calendar-history td.has-report::after {
+    content: '📊';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 0.7rem;
+    background: #fff;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.calendar-history td.today {
+    border: 2px solid var(--accent-color, #e11d48);
+}
+.calendar-history td.has-report .calendar-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--surface-color, #181b23);
+    color: var(--primary-text-color, #fff);
+    padding: 0.5rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    z-index: 1000;
+    border: 1px solid var(--border-color, #23272f);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.calendar-history td.has-report:hover .calendar-tooltip,
+.calendar-history td.has-report:focus .calendar-tooltip {
+    opacity: 1;
+}
+.calendar-history td:empty {
+    background: none;
+    border: none;
+    cursor: default;
+}
+.calendar-history td:empty:hover {
+    background: none;
+    transform: none;
+    box-shadow: none;
+}
+
+#calendar-day-details {
+    background: var(--surface-color, #181b23);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border: 1px solid var(--border-color, #23272f);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 1400px) {
+    .calendar-container, .calendar-history {
+        max-width: 100%;
+    }
+    #calendar-day-details {
+        margin-top: 0.5rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .calendar-container {
+        padding: 0.1rem 1rem 0.1rem 1rem;
+        margin-bottom: 1.5rem;
+    }
+    .calendar-history {
+        font-size: 0.9rem;
+    }
+    .calendar-history .calendar-header {
+        padding: 1.5rem 0.5rem 0.5rem 0.5rem;
+    }
+    .calendar-history .calendar-table {
+        border-spacing: 0.3rem 0.3rem;
+    }
+    .calendar-history td {
+        min-width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+        padding: 0.5rem 0.3rem;
+    }
+    #calendar-day-details {
+        padding: 1rem;
+        margin-top: 0.5rem;
+    }
+} 

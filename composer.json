@@ -1,0 +1,17 @@
+{
+    "name": "easy-rake/system",
+    "description": "Sistema Easy Rake - Gestão de Caixa e Jogadores",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "tecnickcom/tcpdf": "^6.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "EasyRake\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+} 

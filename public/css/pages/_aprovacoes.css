@@ -1,0 +1,575 @@
+/* ==========================================================================
+   PÁGINA DE APROVAÇÕES - EASY RAKE
+   ========================================================================== */
+
+/* Estilos específicos para a página de aprovações */
+.approval-card {
+    background: var(--surface-color, #181b23);
+    border-radius: 16px;
+    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.10);
+    border: 1.5px solid var(--border-color, #23272f);
+    padding: 2.1rem 1.6rem 1.5rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 200px;
+    transition: box-shadow 0.2s, border 0.2s;
+    position: relative;
+    text-align: center;
+    min-width: 320px;
+    max-width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+.approval-card:hover {
+    box-shadow: 0 6px 28px 0 rgba(225,29,72,0.13);
+    border: 2px solid var(--accent-color, #e11d48);
+}
+.approval-card h3 {
+    margin: 0 0 0.7rem 0;
+    font-size: 1.18rem;
+    color: var(--primary-text-color, #fff);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+.approval-card p {
+    color: var(--secondary-text-color, #bfc4cc);
+    font-size: 1.04rem;
+    margin-bottom: 1.3rem;
+    margin-top: 0;
+    line-height: 1.5;
+}
+.approval-count {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--accent-color, #e11d48);
+    margin-bottom: 1.2rem;
+    margin-top: 0.2rem;
+}
+.approval-card .button {
+    margin-top: auto;
+    align-self: flex-end;
+    padding: 0.65rem 1.4rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    background: var(--accent-color, #e11d48) !important;
+    color: #fff !important;
+    border: none !important;
+    box-shadow: 0 1px 4px 0 rgba(225,29,72,0.10);
+    transition: background 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+.approval-card .button.button--secondary {
+    background: #232326 !important;
+    color: #fff !important;
+    border: 1.5px solid var(--border-color, #23272f) !important;
+    box-shadow: none !important;
+}
+.approval-card .button:hover {
+    background: #a01432 !important;
+    box-shadow: 0 2px 12px 0 rgba(225,29,72,0.18);
+}
+
+/* Grid de cards de aprovação */
+.approvals-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.approval-card {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .approval-card {
+        padding: 1.1rem 0.7rem;
+        font-size: 0.98rem;
+    }
+}
+
+/* Badges de status */
+.badge {
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-pendente {
+    background: #f59e0b;
+    color: #fff;
+}
+
+.badge-aprovado {
+    background: #10b981;
+    color: #fff;
+}
+
+.badge-rejeitado {
+    background: #ef4444;
+    color: #fff;
+}
+
+.badge-removido {
+    background: #6b7280;
+    color: #fff;
+}
+
+/* Badges de tipo */
+.tipo-badge {
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.tipo-caixa {
+    background: #3b82f6;
+    color: #fff;
+}
+
+.tipo-jogador {
+    background: #8b5cf6;
+    color: #fff;
+}
+
+.tipo-funcionario {
+    background: #f59e0b;
+    color: #fff;
+}
+
+.tipo-relatorio {
+    background: #10b981;
+    color: #fff;
+}
+
+/* Informações do solicitante */
+.solicitante-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.solicitante-info strong {
+    color: var(--primary-text-color, #fff);
+    font-weight: 600;
+}
+
+.solicitante-info small {
+    color: var(--secondary-text-color, #bfc4cc);
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+}
+
+/* Descrição da aprovação */
+.descricao-aprovacao {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 300px;
+}
+
+.descricao-principal {
+    color: var(--primary-text-color, #fff);
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+.descricao-detalhes {
+    color: var(--secondary-text-color, #bfc4cc);
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* Ações de aprovação */
+.acoes-aprovacao {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.acoes-aprovacao .button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.acoes-aprovacao .button--success {
+    background: #10b981 !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+.acoes-aprovacao .button--danger {
+    background: #ef4444 !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+.acoes-aprovacao .button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Informações do aprovador */
+.aprovador-info {
+    color: var(--secondary-text-color, #bfc4cc);
+    font-size: 0.8rem;
+}
+
+/* Ícones */
+.icon-check::before {
+    content: "✓";
+}
+
+.icon-x::before {
+    content: "✕";
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .approvals-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .approval-card {
+        min-width: auto;
+        padding: 1.5rem 1rem;
+    }
+    
+    .acoes-aprovacao {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .acoes-aprovacao .button {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .descricao-aprovacao {
+        max-width: 200px;
+    }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.data-table tbody tr {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Estados de loading */
+.data-table tbody tr.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Melhorias na tabela */
+.data-table th {
+    background: var(--surface-color, #181b23);
+    color: var(--primary-text-color, #fff);
+    font-weight: 600;
+    padding: 1rem 0.8rem;
+    border-bottom: 2px solid var(--border-color, #23272f);
+    text-align: left;
+}
+
+.data-table td {
+    padding: 1rem 0.8rem;
+    border-bottom: 1px solid var(--border-color, #23272f);
+    vertical-align: middle;
+}
+
+.data-table tbody tr:hover {
+    background: rgba(225,29,72,0.05);
+}
+
+/* Informações da unidade */
+/* Organização vertical dos cards de informações da unidade */
+.unidade-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    margin-top: 1rem;
+}
+
+.info-item {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem 1.2rem;
+    background: rgba(255,255,255,0.04);
+    border-radius: 8px;
+    border: 1px solid var(--border-color, #23272f);
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .info-item {
+        padding: 0.8rem 0.7rem;
+        font-size: 0.98rem;
+    }
+}
+
+/* Agrupamento do código de acesso, botão e status */
+.codigo-acesso {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+}
+
+.codigo-texto {
+    font-family: 'Courier New', monospace;
+    background: rgba(225,29,72,0.13);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    color: var(--accent-color, #e11d48);
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    border: 1px solid rgba(225,29,72,0.18);
+    margin-right: 0;
+    margin-bottom: 0;
+}
+
+.button--small {
+    padding: 0.4rem 1.1rem;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    font-weight: 600;
+    background: var(--accent-color, #e11d48) !important;
+    color: #fff !important;
+    border: none !important;
+    box-shadow: 0 1px 4px 0 rgba(225,29,72,0.10);
+    transition: background 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    margin: 0;
+}
+
+.status-badge {
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-left: 0.5rem;
+    background: #10b981;
+    color: #fff;
+    display: inline-block;
+}
+
+.status-inativo {
+    background: #6b7280;
+}
+
+@media (max-width: 900px) {
+    .unidade-info {
+        grid-template-columns: 1fr;
+        gap: 0.7rem;
+    }
+    .info-item {
+        padding: 0.8rem 0.7rem;
+    }
+    .codigo-acesso {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+/* Ajuste para evitar sobreposição do botão e status */
+.codigo-acesso .button--small {
+    margin-right: 0;
+    margin-bottom: 0;
+}
+
+.codigo-acesso .status-badge {
+    margin-left: 0;
+    margin-top: 0;
+} 
+
+/* Grid 2x2 para os cards de aprovações */
+.approvals-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.2rem 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.approval-card {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .approvals-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+        gap: 1.1rem;
+    }
+} 
+
+/* Justificar textos dos cards de aprovações para a esquerda */
+.approval-card {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.approval-card h3,
+.approval-card p,
+.approval-card .approval-count {
+    text-align: left;
+    width: 100%;
+}
+
+.approval-card .button {
+    align-self: flex-end;
+    margin-top: 1.2rem;
+}
+
+@media (max-width: 900px) {
+    .approval-card .button {
+        align-self: stretch;
+        margin-top: 1rem;
+    }
+} 
+
+/* Grid de 3 cards para aprovações */
+.approvals-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.approval-card {
+    background: #23252b;
+    border-radius: 10px;
+    padding: 24px 18px 18px 18px;
+    box-shadow: 0 2px 8px #0002;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 140px;
+}
+
+.approval-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.15rem;
+    color: #fff;
+}
+
+.approval-card .approval-count {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 18px;
+    color: #f1c40f;
+}
+
+#btn-ver-pendentes {
+    background: #e74c3c;
+    color: #fff;
+}
+#btn-ver-aprovados {
+    background: #27ae60;
+    color: #fff;
+}
+#btn-ver-rejeitados {
+    background: #c0392b;
+    color: #fff;
+}
+
+#btn-ver-pendentes:hover,
+#btn-ver-aprovados:hover,
+#btn-ver-rejeitados:hover {
+    filter: brightness(1.1);
+    opacity: 0.92;
+}
+
+@media (max-width: 900px) {
+    .approvals-grid-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Esconde coluna de ações quando não for pendente */
+.hide-acoes {
+    display: none !important;
+} 
+
+.info-unidade-box {
+    background: #181c22;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px #0002;
+    color: #fff;
+    font-size: 1.1em;
+}
+.info-unidade-box div {
+    margin-bottom: 0.7em;
+}
+.codigo-acesso-badge {
+    background: #c0392b;
+    color: #fff;
+    font-weight: bold;
+    padding: 0.2em 0.7em;
+    border-radius: 6px;
+    font-size: 1.1em;
+    letter-spacing: 2px;
+    margin-left: 0.5em;
+}
+.btn-copiar-codigo {
+    background: #222;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em 1.2em;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 1em;
+    transition: background 0.2s;
+}
+.btn-copiar-codigo:hover {
+    background: #c0392b;
+    color: #fff;
+}
+@media (max-width: 600px) {
+    .info-unidade-box {
+        padding: 1rem;
+        font-size: 1em;
+    }
+} 

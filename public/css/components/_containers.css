@@ -1,0 +1,14 @@
+.content-card {
+    background-color: var(--cor-card-fundo);
+    border-radius: var(--border-radius-container);
+    padding: 2rem;
+    border: var(--borda-card);
+    box-shadow: var(--sombra-card);
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.card-body {
+    /* Estilos para o corpo do card, se necessário */
+}
