@@ -10,7 +10,7 @@ Sistema de gestão de clubes, caixas, jogadores e operações financeiras.
 - **Banco de dados:**
   - Porta: **3307** (XAMPP padrão)
   - Usuário: **root**
-  - Senha: **36140888**
+  - Senha: **123456**
   - Banco: **easy_rake**
 - Para criar o banco e as tabelas, execute:
   ```bash
