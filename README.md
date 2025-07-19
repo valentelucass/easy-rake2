@@ -1,3 +1,13 @@
+<!-- PORTFOLIO-FEATURED
+title: Easy Rake
+description: Sistema de gestão full-stack para clubes, focado em caixas, jogadores e operações financeiras, com controle de acesso por funcionários, fluxo de aprovações e testes automatizados.
+technologies: PHP, MySQL, JavaScript, HTML5, CSS3
+demo: https://github.com/valentelucass/easy-rake2
+highlight: true
+image: easy-rake.png
+-->
+
+
 <p align="center">
   <img src="easy-rake.png" alt="easy rake Logo" width="3000">
 </p>
