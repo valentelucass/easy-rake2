@@ -9,7 +9,7 @@ image: easy-rake.png
 
 
 <p align="center">
-  <img src="locadora.jpg" alt="locadora Logo" width="3000">
+  <img src="locadora.png" alt="locadora Logo" width="3000">
 </p>
 
 # Easy Rake
