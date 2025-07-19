@@ -1,6 +1,8 @@
-# Easy Rake
+<p align="center">
+  <img src="easy-rake.png" alt="easy rake Logo" width="3000">
+</p>
 
-## Visão Geral
+# Easy Rake
 Sistema de gestão de clubes, caixas, jogadores e operações financeiras.
 
 ---
